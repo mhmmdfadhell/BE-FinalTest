@@ -56,6 +56,44 @@
       border: none;
       cursor: pointer;
     }
+    form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
   </style>
 </head>
 <body>
@@ -134,36 +172,25 @@
         </select>
     </div>
     <div>
-        <label for="address"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-        <textarea name="address" id="address"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white resize-none h-24"
-            placeholder="Address" required></textarea>
+        <label for="address">Address</label>
+        <textarea name="address" id="address" required></textarea>
     </div>
     <div>
-        <label for="hp"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Handphone</label>
-        <input type="number" name="hp" id="hp" placeholder="0895 1234 5678"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        <label for="hp">Handphone</label>
+        <input type="number" name="hp" id="hp" placeholder="0895 1234 567"
             required>
     </div>
     <div>
-        <label for="parent_name"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Parent Name</label>
+        <label for="parent_name">Parent Name</label>
         <input type="text" name="parent_name" id="parent_name" placeholder="Parent Name"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             required>
     </div>
     <div>
-        <label for="parent_hp"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Parent
-            Handphone</label>
+        <label for="parent_hp">Parent Handphone</label>
         <input type="number" name="parent_hp" id="parent_hp" placeholder="0895 1234 5678"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             required>
     </div>
-    <button type="submit"
-        class="w-full text-white bg-[#0082E3] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+    <button type="submit">Add
         Student</button>
 </form>
 </div>

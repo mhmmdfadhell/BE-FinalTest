@@ -1,0 +1,57 @@
+<h1>Tambah Siswa</h1>
+  <form action="#" method="POST" >
+    <div>
+        <label for="fullname">Fullname</label>
+        <input type="text" name="fullname" id="fullname"
+            placeholder="Name" value="<%= data.fullname %>" required>
+    </div>
+    <div>
+        <label for="born_date">BornDate</label>
+        <input type="date" name="born_date" id="born_date"
+       value = "<%= moment(data.born_date).format('YYYY-MM-DD') %>"   required>
+    </div>
+    <div>
+        <label for="grade">Grade</label>
+        <select name="grade" id="grade" value="<%= data.grade %>" required >
+            <option value="Mathematics">
+                Mathematics
+            </option>
+            <option value="Science">
+                Science
+            </option>
+            <option value="Social">
+                Social
+            </option>
+            <option value="Literature">
+                Literature
+            </option>
+            <option value="Martial Art">
+                Martial Art
+            </option>
+            <option value="Dance">
+                Dance
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="address">Address</label>
+        <textarea name="address" id="address"required ><%= data.address %></textarea>
+    </div>
+    <div>
+        <label for="hp">Handphone</label>
+        <input type="number" name="hp" id="hp" placeholder="0895 1234 567"
+        value="<%= data.hp %>"   required>
+    </div>
+    <div>
+        <label for="parent_name">Parent Name</label>
+        <input type="text" name="parent_name" id="parent_name" placeholder="Parent Name"
+        value="<%= data.parent_name %>"   required>
+    </div>
+    <div>
+        <label for="parent_hp">Parent Handphone</label>
+        <input type="number" name="parent_hp" id="parent_hp" placeholder="0895 1234 5678"
+        value="<%= data.parent_hp %>"   required>
+    </div>
+    <button type="submit">Add
+        Student</button>
+</form>

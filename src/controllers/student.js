@@ -100,18 +100,7 @@ exports.editStudent = async (req, res) => {
   try {
     const body = req.body;
     const id = req.params.id;
-    let age = moment().diff(moment(body.born_date, "YYYY-MM-DD"), "years");
-
-    const data = {
-      fullname: body.fullname,
-      age: age,
-      born_date: body.born_date,
-      grade: body.grade,
-      address: body.address,
-      hp: body.hp,
-      parent_name: body.parent_name,
-      parent_hp: body.parent_hp,
-    };
+    // let age = moment().diff(moment(body.born_date, "YYYY-MM-DD"), "years");
 
     const findStudent = await student.findOne({
       where: {
@@ -122,28 +111,10 @@ exports.editStudent = async (req, res) => {
       },
     });
 
-    const schema = joi.object({
-      fullname: body.fullname,
-      born_date: body.born_date,
-      grade: body.grade,
-      address: body.address,
-      hp: body.hp,
-      parent_name: body.parent_name,
-      parent_hp: body.parent_hp,
+    res.render("pages/edit", {
+      data: findStudent,
+      moment:moment
     });
-
-    const { error } = schema.validate(body);
-
-    if (error) {
-      return res.status(400).send({
-        message: error.details[0].message,
-      });
-    }
-
-    await findStudent.update(data, {
-      where: { id },
-    });
-    res.redirect("/dashboard");
   } catch (error) {
     console.log(error);
     return res.status(500).send({
